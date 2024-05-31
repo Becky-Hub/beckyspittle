@@ -21,11 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
-            sections.forEach(section => {
-                if (section.id === targetId) {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                // Close the menu after a link is clicked
+                navLinks.classList.remove('active');
+            }
         });
     });
 

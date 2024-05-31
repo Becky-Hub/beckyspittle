@@ -154,6 +154,90 @@ footer {
     padding: 1rem 0;
 }
 
+/* Existing CSS content */
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav ul li button {
+        display: block;
+    }
+
+    .footer-nav-links {
+        display: flex;
+    }
+
+    .footer-nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .footer-nav-links li a {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+    .footer-nav-links li a:hover {
+        text-decoration: underline;
+    }
+}
+
+section {
+    padding: 2rem;
+    margin-top: 70px; /* Adjust to the height of your header */
+}
+
+.introduction {
+    text-align: left; /* Ensures the text is aligned to the left */
+}
+
+.introduction h1 {
+    font-size: 2.5rem;
+}
+
+.introduction p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+#changing-text {
+    color: grey; /* Changes the color of the changing text to grey */
+}
+
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.tile {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 300px;
+    text-align: center;
+}
+
+.tile a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.tile a:hover {
+    color: #000;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
 @media (max-width: 768px) {
     .tiles {
         flex-direction: column;
@@ -233,7 +317,12 @@ footer {
 
     .nav-links li button {
         padding: 1rem;
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
+    }
+
+    .nav-links li button#close-menu {
+        position: absolute;
+        right: 1px;
+        width: 10%;
+        top: 1px;
     }
 }

@@ -9,19 +9,37 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="name">
+                    <a href="#about">Becky Spittle</a>
+                </div>
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><button id="close-menu">X</button></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <section id="home">
+    <section id="introduction">
         <div class="introduction">
-            <h1>Your Name</h1>
-            <p>Introduction text goes here. Briefly talk about yourself, your interests, and your philosophy.</p>
+            <h1>Hi! here you can learn more about my<span id="changing-text"> experience</span></h1>
+            <p>I am dedicated to enhancing user experiences through thoughtful design and innovative technology. With a background in extended reality (XR), user experience (UX), interaction design, accessibility, and sound, I possess a diverse skill set that is well suited for the dynamic research industry.</p>
+            <p>Driven by the potential of advanced and immersive technologies, I aim to help evolve and improve how we interact with people and digital environments. I am committed to harnessing the potential of technology to create more immersive, intuitive, and inclusive interactive experiences.</p>
+            <p>I excel at applying logical thinking and methodical approaches to implement new concepts and solve real-world problems. I am eager to utilize my technical skills and theoretical knowledge to produce high-quality research with real-world impact.</p>
         </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
         <div class="tiles">
             <div class="tile">
                 <a href="project1.html">Designing an Accessible Smart-Meter</a>
@@ -39,17 +57,29 @@
                 <a href="project5.html">Leveraging Proxemic Dimensions for Context Aware AR Interaction</a>
             </div>
             <div class="tile">
-                <a href="project6.html">Design and Development of a Wirelessly Controlled Microphone Stand</a>
+                <a href="project6.html">AR Application to Aid Supermarket Shopping Experiences</a>
             </div>
             <div class="tile">
-                <a href="project7.html">AR Application to Aid Supermarket Shopping Experiences</a>
+                <a href="project7.html">Design and Development of a Wirelessly Controlled Microphone Stand</a>
             </div>
         </div>
     </section>
 
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>Your resume content goes here.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Contact details go here. Include your email, phone number, and social media links.</p>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Becky Spittle. All rights reserved.</p>
     </footer>
+
+    <button id="contact-me-button">Contact Me</button>
 
     <script src="script.js"></script>
 </body>

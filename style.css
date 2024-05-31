@@ -8,6 +8,30 @@ body {
 header {
     background-color: #333;
     padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.name {
+    flex-grow: 1;
+}
+
+.name a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 nav ul {
@@ -32,9 +56,56 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-section#home {
+nav ul li button {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.footer-nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav ul li button {
+        display: block;
+    }
+
+    .footer-nav-links {
+        display: flex;
+    }
+
+    .footer-nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .footer-nav-links li a {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+    .footer-nav-links li a:hover {
+        text-decoration: underline;
+    }
+}
+
+section {
     padding: 2rem;
-    text-align: center;
+    margin-top: 70px; /* Adjust to the height of your header */
+}
+
+.introduction {
+    text-align: left; /* Ensures the text is aligned to the left */
 }
 
 .introduction h1 {
@@ -44,6 +115,10 @@ section#home {
 .introduction p {
     font-size: 1.2rem;
     margin: 1rem 0;
+}
+
+#changing-text {
+    color: grey; /* Changes the color of the changing text to grey */
 }
 
 .tiles {
@@ -77,14 +152,88 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
 @media (max-width: 768px) {
     .tiles {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+#contact-me-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.94;
+}
+
+#contact-me-button:hover {
+    background-color: #555;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    background-color: #fff;
+    margin: 4px 0;
+    width: 25px;
+    height: 3px;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: row;
+        align-items: center;
+        opacity: 0.94;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #333;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(100%);
+        display: flex;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 1rem;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .nav-links li button {
+        padding: 1rem;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
     }
 }

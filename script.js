@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('nav ul li a');
-    const sections = document.querySelectorAll('section');
     const changingText = document.getElementById('changing-text');
+    const contactMeButton = document.getElementById('contact-me-button');
     const textArray = [
         " experience", 
         " research", 
@@ -17,21 +17,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(changeText, 2000);
 
+    const navLinks = document.getElementById('nav-links');
+    const offset = 70; // Adjust this value based on the height of your header
+    
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-                // Close the menu after a link is clicked
-                navLinks.classList.remove('active');
+            // Check if the link is a hash link for smooth scrolling
+            if (link.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
             }
+            // Close the overlay panel
+            navLinks.classList.remove('active');
         });
     });
 
     const hamburgerMenu = document.getElementById('hamburger-menu');
-    const navLinks = document.getElementById('nav-links');
     const closeMenu = document.getElementById('close-menu');
 
     hamburgerMenu.addEventListener('click', () => {
@@ -42,7 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.remove('active');
     });
 
-    document.getElementById('contact-me-button').addEventListener('click', () => {
-        window.location.href = '#contact';
-    });
+    if (contactMeButton) {
+        contactMeButton.addEventListener('click', () => {
+            window.location.href = 'index.html#contact';
+        });
+    }
 });

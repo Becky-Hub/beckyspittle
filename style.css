@@ -132,20 +132,39 @@ section {
 .tile {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
-    padding: 1rem;
     width: 300px;
-    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .tile a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
-.tile a:hover {
-    color: #000;
+.tile img {
+    width: 100%;
+    height: auto;
 }
+
+.tile h3 {
+    padding: 1rem;
+    background-color: #fff;
+    margin: 0;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 
 footer {
     background-color: #333;
@@ -153,8 +172,6 @@ footer {
     text-align: center;
     padding: 1rem 0;
 }
-
-/* Existing CSS content */
 
 @media (max-width: 768px) {
     nav ul {
@@ -293,7 +310,9 @@ footer {
         position: fixed;
         bottom: 0;
         left: 0;
-        background-color: #333;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.9);
         transition: transform 0.3s ease-in-out;
         transform: translateY(100%);
         display: flex;
@@ -311,8 +330,6 @@ footer {
     .nav-links li a {
         display: block;
         padding: 1rem;
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
     }
 
     .nav-links li button {

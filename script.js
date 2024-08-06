@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('nav ul li a');
+    const links = document.querySelectorAll('nav ul li a, .mobile-nav a');
     const changingText = document.getElementById('changing-text');
-    const contactMeButton = document.getElementById('contact-me-button');
     const textArray = [
         " experience", 
         " research", 
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(changeText, 2000);
 
-    const navLinks = document.getElementById('nav-links');
     const offset = 70; // Adjust this value based on the height of your header
     
     links.forEach(link => {
@@ -32,25 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             }
-            // Close the overlay panel
-            navLinks.classList.remove('active');
         });
     });
-
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const closeMenu = document.getElementById('close-menu');
-
-    hamburgerMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    closeMenu.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-    });
-
-    if (contactMeButton) {
-        contactMeButton.addEventListener('click', () => {
-            window.location.href = 'index.html#contact';
-        });
-    }
 });

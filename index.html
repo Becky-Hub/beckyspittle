@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -13,22 +15,16 @@
                 <div class="name">
                     <a href="#introduction">Becky Spittle</a>
                 </div>
-                <div class="hamburger-menu" id="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-links" id="nav-links">
+                <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><button id="close-menu">X</button></li>
                 </ul>
             </div>
         </nav>
     </header>
-
+    <div class="page-wrapper">
     <section id="introduction">
         <div class="introduction">
             <h1>Hi! here you can learn more about my<span id="changing-text"> experience</span></h1>
@@ -37,10 +33,10 @@
 
     <section id="about">
         <h2>About</h2>
-        <p>I am dedicated to enhancing user experiences through thoughtful design and innovative technology. With a background in extended reality (XR), user experience (UX), interaction design, accessibility, and sound, I possess a diverse skill set that is well suited for the dynamic research industry.</p>
-        <p>Driven by the potential of advanced and immersive technologies, I aim to help revolutionize how we interact with people and digital environments. I am committed to harnessing this potential to create more immersive, intuitive, and inclusive interactive experiences.</p>
-        <p>I excel at applying logical thinking and methodical approaches to implement new concepts and solve real-world problems. I am eager to utilize my technical skills and theoretical knowledge to produce high-quality research with real-world impact.</p>
-        </section>
+        <p>I'm dedicated to enhancing user experiences through thoughtful design and innovative technology. My background in extended reality (XR), user experience (UX), interaction design, accessibility, and sound has equipped me with a diverse skill set well-suited for the dynamic field of HCI research.</p>
+        <p>With a strong publication record and experience leading successful projects, I have proven my ability to produce high-quality, impactful work. In 2022, I received the prestigious Microsoft Research PhD Fellowship and later completed an internship with the Collaborative Intelligence team at MSR Cambridge. These contributions have been shared with wider groups at MSR, directly informing their research directions.</p>
+        <p>Fueled by the potential of XR and AI/ML to reshape how we communicate with digital environments, I’m committed to leveraging these technologies to create more practical, intuitive, and inclusive interactive experiences. With a broad and specialized knowledge base in technology, interaction, research, design, and development, I excel in applying logical thinking and methodical approaches to develop new concepts and solve real-world problems. I’m eager to utilize my technical skills and theoretical knowledge to produce high-quality research with real-world impact.</p>
+    </section>
 
     <section id="projects">
         <h2>Projects</h2>
@@ -106,12 +102,18 @@
         <h2>Contact</h2>
         <p>Contact details go here. Include your email, phone number, and social media links.</p>
     </section>
+    </div>
 
     <footer>
         <p>&copy; 2024 Becky Spittle. All rights reserved.</p>
     </footer>
 
-    <button id="contact-me-button">Contact Me</button>
+    <div class="mobile-nav">
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
+        <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
 
     <script src="script.js"></script>
 </body>

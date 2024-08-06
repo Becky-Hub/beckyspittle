@@ -103,6 +103,10 @@ nav ul li a:hover {
         padding: 0.2rem 0; /* Add padding inside the border */
         box-sizing: border-box;
     }
+
+    #contact-me-button {
+        display: none;
+    }
 }
 
 section {
@@ -178,4 +182,24 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+}
+
+#contact-me-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF6F61; /* Soft coral */
+    color: #fff;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.94;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+#contact-me-button:hover {
+    background-color: #FF7F6E; /* Slightly lighter coral for hover effect */
 }

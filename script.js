@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('nav ul li a, .mobile-nav a');
     const changingText = document.getElementById('changing-text');
+    const contactMeButton = document.getElementById('contact-me-button');
     const textArray = [
         " experience", 
         " research", 
@@ -32,4 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    if (contactMeButton) {
+        contactMeButton.addEventListener('click', () => {
+            window.location.href = 'index.html#contact';
+        });
+    }
 });

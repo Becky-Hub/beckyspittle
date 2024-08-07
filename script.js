@@ -32,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
+                // Close the mobile nav after clicking a link
+                if (mobileNav.classList.contains('open')) {
+                    mobileNav.classList.remove('open');
+                    hamburgerMenu.innerHTML = '<i class="fas fa-bars"></i>';
+                }
             }
         });
     });

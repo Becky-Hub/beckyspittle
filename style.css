@@ -94,19 +94,19 @@ nav ul li a:hover {
     right: 20px;
     z-index: 1000;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    transform: translateY(100%);
+    transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
 }
 
 .mobile-nav.open {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
 }
 
 .mobile-nav.close {
-    transform: translateY(100%);
+    transform: translateX(100%);
     opacity: 0;
     /* visibility: hidden; */
 }

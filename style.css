@@ -105,6 +105,12 @@ nav ul li a:hover {
     visibility: visible;
 }
 
+.mobile-nav.close {
+    transform: translateY(100%);
+    opacity: 0;
+    /* visibility: hidden; */
+}
+
 .mobile-nav a {
     background-color: #1A1A77;
     color: #fff;

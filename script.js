@@ -34,7 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 // Close the mobile nav after clicking a link
                 if (mobileNav.classList.contains('open')) {
-                    mobileNav.classList.remove('open');
+                    mobileNav.classList.add('close');
+                    setTimeout(() => {
+                        mobileNav.classList.remove('open');
+                        mobileNav.classList.remove('close');
+                    }, 300); // Match this duration to your CSS transition duration
                     hamburgerMenu.innerHTML = '<i class="fas fa-bars"></i>';
                 }
             }
@@ -48,12 +52,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     hamburgerMenu.addEventListener('click', () => {
-        mobileNav.classList.toggle('open');
         if (mobileNav.classList.contains('open')) {
-            hamburgerMenu.innerHTML = '<i class="fas fa-times"></i>';
+            mobileNav.classList.add('close');
+            setTimeout(() => {
+                mobileNav.classList.remove('open');
+                mobileNav.classList.remove('close');
+            }, 300); // Match this duration to your CSS transition duration
         } else {
-            hamburgerMenu.innerHTML = '<i class="fas fa-bars"></i>';
+            mobileNav.classList.add('open');
         }
+        hamburgerMenu.innerHTML = mobileNav.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        hamburgerMenu.innerHTML = mobileNav.classList.contains('close') ? '<i class="fas fa-bars"></i>': '<i class="fas fa-times"></i>';
     });
 
     // Hide hamburger menu on larger screens
@@ -61,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth > 768) {
             hamburgerMenu.style.display = 'none';
             mobileNav.classList.remove('open');
+            mobileNav.classList.remove('close');
             hamburgerMenu.innerHTML = '<i class="fas fa-bars"></i>';
         } else {
             hamburgerMenu.style.display = 'flex';

@@ -4,12 +4,13 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #FFF1E6; /* Light peach background */
+    line-height: 1.6;
 }
 
 .page-wrapper {
-    border: 40px solid #FFF1E6; /* Add a border to the wrapper */
-    padding: 1rem 0; /* Add padding inside the border */
-    box-sizing: border-box;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -28,10 +30,6 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-}
-
-.name {
-    flex-grow: 1;
 }
 
 .name a {
@@ -80,6 +78,22 @@ nav ul li a:hover {
     transition: background-color 0.3s;
 }
 
+.hamburger:hover {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #FF7F6E;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s;
+}
+
 .hamburger i {
     font-size: 1.5rem;
     color: #fff;
@@ -105,17 +119,25 @@ nav ul li a:hover {
     visibility: visible;
 }
 
-.mobile-nav.close {
-    transform: translateX(100%);
-    opacity: 0;
-    /* visibility: hidden; */
-}
-
 .mobile-nav a {
     background-color: #1A1A77;
     color: #fff;
-    border: none;
-    padding: 0.3rem 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0.3rem 0;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.mobile-nav a:hover {
+    background-color: #3F3FA2;
+    color: #fff;
+    padding: 0.5rem 1rem;
     margin: 0.3rem 0;
     border-radius: 50px;
     text-decoration: none;
@@ -140,14 +162,13 @@ nav ul li a:hover {
         display: flex;
     }
 
-    .page-wrapper {
-        border: 10px solid #FFF1E6; /* Add a border to the wrapper */
-        padding: 0.2rem 0; /* Add padding inside the border */
-        box-sizing: border-box;
-    }
-
     #contact-me-button {
         display: none;
+    }
+
+    .page-wrapper {
+        padding: 1rem;
+        margin-top: 70px; /* To compensate for the fixed header */
     }
 }
 
@@ -158,59 +179,46 @@ nav ul li a:hover {
 }
 
 section {
-    padding: 2rem;
-    margin-top: 70px; /* Adjust to the height of your header */
-}
-
-.introduction {
-    text-align: left; /* Ensures the text is aligned to the left */
-    font-size: 1rem;
+    margin-top: 90px; /* Adjust to the height of your header */
+    padding: 2rem 0;
 }
 
 .introduction h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #1A1A77; /* Dark navy blue */
 }
 
-.introduction p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    color: #4A4A4A; /* Medium gray */
-}
-
 #changing-text {
-    color: #FF6F61; /* Medium gray */
+    color: #FF6F61;
 }
 
 .tiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
 .tile {
     background-color: #f4f4f4;
     border: 2px solid #1A1A77; /* Dark navy blue border */
-    width: 300px;
     overflow: hidden;
     transition: transform 0.3s ease;
     text-align: center;
+    border-radius: 10px;
 }
 
 .tile a {
-    text-decoration: none;
-    color: #1A1A77; /* Dark navy blue text */
-    display: flex;
-    flex-direction: column;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent (consistent dark navy blue) */
+    display: block;
     height: 100%;
-    justify-content: space-between;
 }
 
 .tile img {
     width: 100%;
     height: auto;
+    border-bottom: 2px solid #1A1A77;
 }
 
 .tile h3 {
@@ -218,6 +226,7 @@ section {
     background-color: #fff;
     margin: 0;
     font-size: 1.2rem;
+    color: #1A1A77; /* Ensure the text is the same dark navy blue */
     flex-shrink: 0;
 }
 
@@ -226,11 +235,21 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.tile a:hover h3 {
+    color: #FF6F61; /* Optional: Change the text color on hover to match the hover effect used elsewhere */
+}
+
+/* Ensure links don't change color after being visited */
+.tile a:visited {
+    color: inherit;
+}
+
 footer {
     background-color: #1A1A77; /* Dark navy blue */
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    margin-top: 2rem;
 }
 
 #contact-me-button {

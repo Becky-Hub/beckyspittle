@@ -83,4 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         hamburgerMenu.style.display = 'flex';
     }
+
+    document.querySelectorAll('.accordion-item').forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+    
 });

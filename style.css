@@ -119,6 +119,12 @@ nav ul li a:hover {
     visibility: visible;
 }
 
+.mobile-nav.close {
+    transform: translateX(100%);
+    opacity: 0;
+    /* visibility: hidden; */
+}
+
 .mobile-nav a {
     background-color: #1A1A77;
     color: #fff;
@@ -188,6 +194,13 @@ section {
     color: #1A1A77; /* Dark navy blue */
 }
 
+.page-wrapper h2 {
+    font-size: 2rem;
+    color: #4A4A4A;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
 #changing-text {
     color: #FF6F61;
 }
@@ -233,10 +246,6 @@ section {
 .tile:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.tile a:hover h3 {
-    color: #FF6F61; /* Optional: Change the text color on hover to match the hover effect used elsewhere */
 }
 
 /* Ensure links don't change color after being visited */

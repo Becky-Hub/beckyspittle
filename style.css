@@ -205,6 +205,75 @@ section {
     color: #FF6F61;
 }
 
+.timeline-container {
+    position: relative;
+    padding-left: 40px;
+    margin-top: 2rem;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #1A1A77; /* Dark navy blue */
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item .date {
+    flex-shrink: 0;
+    width: 120px; /* Adjust width as needed */
+    font-size: 1rem;
+    color: #4A4A4A;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.timeline-item .tile {
+    background-color: #fff;
+    border: 2px solid #1A1A77;
+    transition: transform 0.3s ease;
+    text-align: left;
+    border-radius: 10px;
+    flex-grow: 1;
+    margin-left: 20px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item .tile .icon {
+    font-size: 2rem;
+    color: #FF6F61; /* Soft coral for icons */
+    margin-right: 1rem;
+}
+
+.timeline-item .tile h3 {
+    margin: 0;
+    color: #1A1A77; /* Ensure the text is the same dark navy blue */
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.timeline-item .tile a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.timeline-item .tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
 .tiles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

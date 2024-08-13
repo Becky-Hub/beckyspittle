@@ -79,19 +79,7 @@ nav ul li a:hover {
 }
 
 .hamburger:hover {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
     background-color: #FF7F6E;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1001;
-    transition: background-color 0.3s;
 }
 
 .hamburger i {
@@ -119,12 +107,6 @@ nav ul li a:hover {
     visibility: visible;
 }
 
-.mobile-nav.close {
-    transform: translateX(100%);
-    opacity: 0;
-    /* visibility: hidden; */
-}
-
 .mobile-nav a {
     background-color: #1A1A77;
     color: #fff;
@@ -142,17 +124,6 @@ nav ul li a:hover {
 
 .mobile-nav a:hover {
     background-color: #3F3FA2;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    margin: 0.3rem 0;
-    border-radius: 50px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 40px;
-    transition: transform 0.3s;
 }
 
 .mobile-nav a i {
@@ -205,12 +176,14 @@ section {
     color: #FF6F61;
 }
 
+/* Timeline container styling */
 .timeline-container {
     position: relative;
     padding-left: 40px;
     margin-top: 2rem;
 }
 
+/* Timeline line styling */
 .timeline-line {
     position: absolute;
     left: 20px;
@@ -220,6 +193,7 @@ section {
     background-color: #1A1A77; /* Dark navy blue */
 }
 
+/* Timeline item styling */
 .timeline-item {
     display: flex;
     align-items: center;
@@ -227,15 +201,25 @@ section {
     position: relative;
 }
 
+/* Date styling */
 .timeline-item .date {
     flex-shrink: 0;
-    width: 120px; /* Adjust width as needed */
+    width: 35px; /* Adjust width as needed */
     font-size: 1rem;
     color: #4A4A4A;
-    text-align: right;
+    text-align: left;
     padding-right: 20px;
 }
 
+/* Present styling */
+.timeline-item .present {
+    display: block;
+    font-size: 1rem;
+    color: #4A4A4A;
+    text-align: left;
+}
+
+/* Tile styling */
 .timeline-item .tile {
     background-color: #fff;
     border: 2px solid #1A1A77;
@@ -250,12 +234,14 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Icon styling */
 .timeline-item .tile .icon {
     font-size: 2rem;
     color: #FF6F61; /* Soft coral for icons */
     margin-right: 1rem;
 }
 
+/* Tile heading styling */
 .timeline-item .tile h3 {
     margin: 0;
     color: #1A1A77; /* Ensure the text is the same dark navy blue */
@@ -263,17 +249,48 @@ section {
     font-weight: 700;
 }
 
+/* Tile link styling */
 .timeline-item .tile a {
     text-decoration: none;
     color: inherit;
 }
 
+/* Hover effect for tiles */
 .timeline-item .tile:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Media query for small screens */
+@media (max-width: 768px) {
+    /* Make timeline items stack vertically */
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    /* Center the date above the tile */
+    .timeline-item .date {
+        width: auto;
+        padding-right: 0;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    /* Remove the margin-left from the tile to center it */
+    .timeline-item .tile {
+        margin-left: 0;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    /* Adjust the font size of the tile heading */
+    .timeline-item .tile h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tile grid styling */
 .tiles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -322,6 +339,7 @@ section {
     color: inherit;
 }
 
+/* Footer styling */
 footer {
     background-color: #1A1A77; /* Dark navy blue */
     color: #fff;
@@ -330,6 +348,7 @@ footer {
     margin-top: 2rem;
 }
 
+/* Contact me button styling */
 #contact-me-button {
     position: fixed;
     bottom: 20px;

@@ -4,7 +4,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #FFF1E6; /* Light peach background */
-    line-height: 1.6;
+    line-height: 1.75; /* Increased for better readability */
+    overflow-x: hidden; /* Disable side scrolling */
 }
 
 .page-wrapper {
@@ -14,13 +15,19 @@ body {
 }
 
 header {
-    background-color: #1A1A77; /* Dark navy blue */
+    background-color: rgba(26, 26, 119, 0.95); /* Slight transparency for fixed header */
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 0.5rem 0; /* Smaller header on scroll */
+    background-color: rgba(26, 26, 119, 0.85); /* Slightly more transparent */
 }
 
 .nav-container {
@@ -57,7 +64,8 @@ nav ul li a {
     font-size: 1.2rem;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     text-decoration: underline;
     color: #FF6F61;
 }
@@ -107,6 +115,11 @@ nav ul li a:hover {
     visibility: visible;
 }
 
+.mobile-nav.close {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
 .mobile-nav a {
     background-color: #1A1A77;
     color: #fff;
@@ -130,7 +143,7 @@ nav ul li a:hover {
     margin-right: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     nav ul {
         display: none;
     }
@@ -149,7 +162,7 @@ nav ul li a:hover {
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 901px) {
     .hamburger {
         display: none;
     }
@@ -161,15 +174,18 @@ section {
 }
 
 .introduction h1 {
-    font-size: 2.5rem;
-    color: #1A1A77; /* Dark navy blue */
+    font-size: 2.8rem; /* Larger font for the main heading */
+    color: #1A1A77; /* Retaining the navy blue color */
+    margin-bottom: 1rem;
+    font-weight: 800; /* Bolder weight for stronger emphasis */
 }
 
 .page-wrapper h2 {
-    font-size: 2rem;
-    color: #4A4A4A;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem; /* Slightly larger for better hierarchy */
+    color: #333; /* Darker color for better readability */
+    margin-top: 2.5rem; /* Increase spacing for better separation */
+    margin-bottom: 1.5rem;
+    font-weight: 700; /* Increase weight for emphasis */
 }
 
 #changing-text {
@@ -179,14 +195,14 @@ section {
 /* Timeline container styling */
 .timeline-container {
     position: relative;
-    padding-left: 40px;
+    padding-left: 10px; /* Align with headings */
     margin-top: 2rem;
 }
 
 /* Timeline line styling */
 .timeline-line {
     position: absolute;
-    left: 20px;
+    left: 0;
     top: 0;
     bottom: 0;
     width: 4px;
@@ -197,18 +213,44 @@ section {
 .timeline-item {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* Increased margin for a bigger gap */
     position: relative;
 }
 
-/* Date styling */
+/* Date styling with notches as lines */
 .timeline-item .date {
     flex-shrink: 0;
     width: 35px; /* Adjust width as needed */
     font-size: 1rem;
     color: #4A4A4A;
     text-align: left;
-    padding-right: 20px;
+    padding-left: 15px; /* Adjust padding to align with timeline */
+    position: relative;
+    padding-right: 25px; /* Adjust padding to align with timeline */
+}
+
+.timeline-item .date2 {
+    flex-shrink: 0;
+    width: 35px; 
+    font-size: 1rem;
+    color: #4A4A4A;
+    text-align: left;
+    padding-left: 15px; /* Adjust padding to align with timeline */
+    position: relative;
+    padding-right: 25px; 
+    visibility: hidden;
+} 
+
+.timeline-item .date::before {
+    content: "";
+    position: absolute;
+    left: -10px; /* Position it based on your timeline line's location */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px; /* Length of the notch line */
+    height: 4px; /* Thickness of the notch line */
+    background-color: #1A1A77; /* Dark navy blue */
+    z-index: 1;
 }
 
 /* Present styling */
@@ -221,17 +263,18 @@ section {
 
 /* Tile styling */
 .timeline-item .tile {
-    background-color: #fff;
+    background-color: #f4f4f4;
     border: 2px solid #1A1A77;
     transition: transform 0.3s ease;
     text-align: left;
     border-radius: 10px;
     flex-grow: 1;
-    margin-left: 20px;
+    margin-left: 10px;
     padding: 1.5rem;
     display: flex;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding and border are included in element's width */
 }
 
 /* Icon styling */
@@ -239,6 +282,13 @@ section {
     font-size: 2rem;
     color: #FF6F61; /* Soft coral for icons */
     margin-right: 1rem;
+}
+
+.timeline-item .tile .iconBroom {
+    font-size: 2rem;
+    color: #FF6F61; /* Soft coral for icons */
+    margin-right: 1rem;
+    transform: rotate(-90deg);
 }
 
 /* Tile heading styling */
@@ -257,7 +307,7 @@ section {
 
 /* Hover effect for tiles */
 .timeline-item .tile:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -267,6 +317,7 @@ section {
     .timeline-item {
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: 2.5rem; /* Increased margin for more space between items */
     }
 
     /* Center the date above the tile */
@@ -275,20 +326,41 @@ section {
         padding-right: 0;
         margin-bottom: 0.5rem;
         text-align: center;
+        padding-left: 10px; /* Align with new padding */
     }
 
-    /* Remove the margin-left from the tile to center it */
+    .timeline-item .date2 { 
+        visibility: hidden;
+        display: none;
+    }
+
     .timeline-item .tile {
         margin-left: 0;
-        padding: 1rem;
+        padding: 1.5rem 1.5rem 2rem 1.5rem; /* Increase padding */
         width: 100%;
     }
 
-    /* Adjust the font size of the tile heading */
     .timeline-item .tile h3 {
         font-size: 1.2rem;
     }
 }
+
+/* Adjustments for larger screens */
+@media (min-width: 1024px) {
+    /* Increase padding-left for the date */
+    .timeline-item .date {
+        padding-left: 10px; /* Push the date text further right */
+    }
+
+    .timeline-item .date2 {
+        padding-left: 10px; /* Push the date text further right */
+        visibility: hidden;
+    }
+
+    /* Adjust margin-left for the tile to balance */
+    .timeline-item .tile {
+        margin-left: 45px; /* Align tile with new date padding */
+    }
 
 /* Tile grid styling */
 .tiles {
@@ -305,6 +377,7 @@ section {
     transition: transform 0.3s ease;
     text-align: center;
     border-radius: 10px;
+    box-sizing: border-box; /* Ensure padding and border are included in element's width */
 }
 
 .tile a {
@@ -314,15 +387,9 @@ section {
     height: 100%;
 }
 
-.tile img {
-    width: 100%;
-    height: auto;
-    border-bottom: 2px solid #1A1A77;
-}
-
 .tile h3 {
     padding: 1rem;
-    background-color: #fff;
+    background-color: #f4f4f4;
     margin: 0;
     font-size: 1.2rem;
     color: #1A1A77; /* Ensure the text is the same dark navy blue */
@@ -330,13 +397,59 @@ section {
 }
 
 .tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.01);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Ensure links don't change color after being visited */
 .tile a:visited {
     color: inherit;
+}
+
+/* Overlay for the Alpaca collage */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 10000; /* Above everything else */
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #FFF1E6; /* Matching the page background */
+    padding: 20px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.collage img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: #FF6F61;
+    cursor: pointer;
 }
 
 /* Footer styling */
@@ -345,8 +458,41 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
+    margin: 0; /* Ensure no margin around the footer */
+    width: 100%; /* Ensure the footer spans the full width */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for separation */
 }
+
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #1A1A77; /* Dark navy blue */
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-item i {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    color: #FF6F61; /* Soft coral for icons */
+}
+
+.contact-item:hover {
+    color: #FF6F61; /* Change text color on hover */
+    text-decoration: underline;
+}
+
 
 /* Contact me button styling */
 #contact-me-button {
@@ -363,8 +509,18 @@ footer {
     opacity: 0.94;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 #contact-me-button:hover {
     background-color: #FF7F6E; /* Slightly lighter coral for hover effect */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+
+body, html {
+    margin: 0; 
+    padding: 0; 
+    scroll-behavior: smooth;
+}
 }

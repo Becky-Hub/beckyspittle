@@ -38,7 +38,8 @@
             <p>With a strong publication record and experience leading and collaborating on successful projects, I have proven my ability to produce high-quality, impactful work. In 2022, I was awarded the prestigious Microsoft Research PhD Fellowship and later completed an internship with the Collaborative Intelligence team at MSR Cambridge. Research contributions produced during my internship have been shared with wider groups at MSR, directly informing their research directions.</p>
             <p>Driven by the potential of Natural User Interfaces, XR, and AI/ML to reshape how we interact with digital content, I’m committed to leveraging these technologies to deliver more practical, intuitive, and personalised experiences. With a broad knowledge base in interaction design, UX research, and development, I thrive on applying logical thinking and methodical approaches to develop new concepts and address real-world problems. I’m eager to apply my technical skills and theoretical knowledge to produce research with real-world impact.</p>
             <p>I have a background in Music Technology, where after using music software and tinkering with hardware and electronics, I began to develop my passion for interactive systems. Following my BSc, I completed an MSc in User Experience Design, where I gained a strong interest for user-centred research and advanced and immersive technologies. This led me to specialise in interaction design.</p>
-            <p>I’m always up for meeting new people and learning something new! Outside of work I enjoy listening to music, playing video games and the acoustic guitar, reading, travelling and looking at cute pictures of alpacas</p>
+            <p>I’m always up for meeting new people and learning something new! Outside of work I enjoy listening to music, playing video games and the acoustic guitar, reading, travelling and looking at <a href="#alpacas">cute pictures of alpacas</a>
+            </p>
         </section>
 
         <section id="projects">
@@ -47,20 +48,19 @@
                 <div class="timeline-line"></div>
 
                 <div class="timeline-item">
-                        <div class="date">
-                            2020-
-                            <div class="present">Present</div>
-                        </div>
-                        <div class="tile">
-                            <div class="icon">
-                                <i class="fas fa-vr-cardboard"></i>
-                            </div>
-                            <a href="project1.html">
-                                <h3>Leveraging Proxemic Dimensions for Context Aware XR Interaction</h3>
-                            </a>
-                        </div>
+                    <div class="date">
+                        2020-
+                        <div class="present">Present</div>
                     </div>
-                    
+                    <div class="tile">
+                        <div class="icon">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <a href="project1.html">
+                            <h3>Leveraging Proxemic Dimensions for Context Aware XR Interaction</h3>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="timeline-item">
                     <div class="date">2023</div>
@@ -78,7 +78,7 @@
                     <div class="date">2022</div>
                     <div class="tile">
                         <div class="icon">
-                            <i class="fas fa-text-height"></i>
+                            <i class="fas fa-text-width"></i>
                         </div>
                         <a href="project3.html">
                             <h3>Exploring Text Selection in AR Systems</h3>
@@ -111,10 +111,10 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="date">2020</div>
+                    <div class="date2">2020</div>
                     <div class="tile">
                         <div class="icon">
-                            <i class="fas fa-broom"></i>
+                            <i class="fas fa-soap"></i>
                         </div>
                         <a href="project6.html">
                             <h3>AR Application to Aid Home Cleaning Experiences</h3>
@@ -123,7 +123,7 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="date">2020</div>
+                    <div class="date2">2020</div>
                     <div class="tile">
                         <div class="icon">
                             <i class="fas fa-bolt"></i>
@@ -147,7 +147,7 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="date">2019</div>
+                    <div class="date2">2019</div>
                     <div class="tile">
                         <div class="icon">
                             <i class="fas fa-microphone-alt"></i>
@@ -167,26 +167,50 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Contact details go here. Include your email, phone number, and social media links.</p>
+            <p>It would be great to hear from you! Reach out via email or connect with me on LinkedIn.</p>
+            <div class="contact-info">
+                <a href="mailto:becky.spittle@outlook.com" class="contact-item">
+                    <i class="fas fa-envelope"></i> becky.spittle@outlook.com
+                </a>
+                <a href="https://www.linkedin.com/in/becky-spittle/" target="" class="contact-item">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
         </section>
+
+        <div class="hamburger" id="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+            <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
+            <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+
+        <button id="contact-me-button">Contact Me</button>
     </div>
 
     <footer class="footer">
         <p>&copy; 2024 Becky Spittle. All rights reserved.</p>
     </footer>
 
-    <div class="hamburger" id="hamburger-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <div class="mobile-nav" id="mobile-nav">
-        <a href="#about"><i class="fas fa-user"></i> About</a>
-        <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
-        <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-    </div>
-
-    <button id="contact-me-button">Contact Me</button>
     <script src="script.js"></script>
+
+    <div id="alpaca-overlay" class="overlay">
+        <span class="close-btn">&times;</span>
+        <div class="overlay-content">
+            <div class="collage">
+                <img src="images/mateusz-d-OF9wO3yehLk-unsplash.jpg" alt="A curious alpaca with white fur looking towards the camera">
+                <img src="images/yuvy-dhaliah-xLn90ViSeoE-unsplash.jpg" alt="Two alpacas nuzzling with mountains in the background">
+                <img src="images/chris-ZhF-9SKetvs-unsplash.jpg" alt="A white-furred alpaca standing out in a group with a curious expression">
+                <img src="images/anastasiya-rQzo9K1__A0-unsplash.jpg" alt="An alpaca making a funny face while munching on grass">
+                <img src="images/dylan-leagh-8qSlYS1K-Gs-unsplash.jpg" alt="Two fluffy alpacas standing in a green field">
+                <img src="images/alec-favale-nzPOHL2pD_g-unsplash.jpg" alt="An alpaca with brown fur resting on the ground looking calm">
+                <img src="images/joakim-honkasalo-GZa4QFmv0Zg-unsplash.jpg" alt="A close-up of an alpaca peeking through a fence with expressive eyes">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

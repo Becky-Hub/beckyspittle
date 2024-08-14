@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactMeButton = document.getElementById('contact-me-button');
     const hamburgerMenu = document.getElementById('hamburger-menu');
     const mobileNav = document.getElementById('mobile-nav');
+    const alpacaOverlay = document.getElementById('alpaca-overlay');
+    const closeBtn = document.querySelector('.close-btn');
+    const alpacaLink = document.querySelector('a[href="#alpacas"]');
     const textArray = [
         " experience", 
         " research", 
@@ -45,6 +48,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    if (alpacaLink) {
+        alpacaLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            alpacaOverlay.style.display = 'flex';
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            alpacaOverlay.style.display = 'none';
+        });
+    }
+
+    if (alpacaOverlay) {
+        alpacaOverlay.addEventListener('click', function(event) {
+            if (event.target === alpacaOverlay) {
+                alpacaOverlay.style.display = 'none';
+            }
+        });
+    }
+
     if (contactMeButton) {
         contactMeButton.addEventListener('click', () => {
             window.location.href = 'index.html#contact';
@@ -84,10 +108,18 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburgerMenu.style.display = 'flex';
     }
 
+    window.onscroll = function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+
     document.querySelectorAll('.accordion-item').forEach(item => {
         item.addEventListener('click', () => {
             item.classList.toggle('active');
         });
     });
-    
 });

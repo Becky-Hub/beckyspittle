@@ -110,16 +110,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.onscroll = function() {
         const header = document.querySelector('header');
+        const contactLink = document.querySelector('nav ul li a[href="#contact"]');
+        const resumeLink = document.querySelector('nav ul li a[href="#resume"]');
+
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
+        }
+
+        // Detect if the user is at the bottom of the page
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+            // Highlight the contact link and unhighlight the resume link
+            contactLink.classList.add('active');
+            resumeLink.classList.remove('active');
+        } else {
+            // Ensure the contact link is not highlighted when not at the bottom
+            contactLink.classList.remove('active');
         }
     };
 
     document.querySelectorAll('.accordion-item').forEach(item => {
         item.addEventListener('click', () => {
             item.classList.toggle('active');
+        });
+    });
+
+    // Preload images when the DOM is ready
+    const images = document.querySelectorAll('.collage img');
+    images.forEach(img => {
+        const src = img.getAttribute('src');
+        const imgPreload = new Image();
+        imgPreload.src = src;
+    });
+
+    // Navbar link highlighting based on scroll position
+    window.addEventListener('scroll', () => {
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('.nav-links a');
+        
+        sections.forEach(section => {
+            let top = window.scrollY;
+            let offset = section.offsetTop - 150;
+            let height = section.offsetHeight;
+            let id = section.getAttribute('id');
+            
+            if (top >= offset && top < offset + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(id)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
         });
     });
 });

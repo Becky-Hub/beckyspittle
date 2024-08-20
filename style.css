@@ -213,21 +213,13 @@ section {
 
 /* Make the "cute pictures of alpacas" link coral */
 a[href="#alpacas"] {
-<<<<<<< HEAD
-    color: #4A4A4A;
-    text-decoration: underline;
-=======
     text-decoration: none;
     color: #333;
->>>>>>> 5733b86 (initial commit from surface)
 }
 
 a[href="#alpacas"]:hover {
     color: #FF7F6E;
-<<<<<<< HEAD
-=======
     text-decoration: underline;
->>>>>>> 5733b86 (initial commit from surface)
 }
 
 /* Timeline container styling */
@@ -537,8 +529,6 @@ a[href="#alpacas"]:hover {
     background-color: #FF7F6E;
 }
 
-<<<<<<< HEAD
-=======
        /* Modal overlay styling */
        .pdf-overlay {
         display: none;
@@ -623,7 +613,6 @@ a[href="#alpacas"]:hover {
         overflow: hidden;
     }
 
->>>>>>> 5733b86 (initial commit from surface)
 /* Footer styling */
 footer {
     background-color: #1A1A77;

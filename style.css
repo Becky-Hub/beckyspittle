@@ -213,12 +213,21 @@ section {
 
 /* Make the "cute pictures of alpacas" link coral */
 a[href="#alpacas"] {
+<<<<<<< HEAD
     color: #4A4A4A;
     text-decoration: underline;
+=======
+    text-decoration: none;
+    color: #333;
+>>>>>>> 5733b86 (initial commit from surface)
 }
 
 a[href="#alpacas"]:hover {
     color: #FF7F6E;
+<<<<<<< HEAD
+=======
+    text-decoration: underline;
+>>>>>>> 5733b86 (initial commit from surface)
 }
 
 /* Timeline container styling */
@@ -528,6 +537,93 @@ a[href="#alpacas"]:hover {
     background-color: #FF7F6E;
 }
 
+<<<<<<< HEAD
+=======
+       /* Modal overlay styling */
+       .pdf-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Prevent scrolling inside the overlay */
+    }
+
+    /* PDF content container */
+    .pdf-content {
+        position: relative;
+        width: 90%;
+        height: 90%;
+        max-width: 900px;
+        max-height: 90%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* PDF viewer iframe */
+    #pdf-viewer {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Close button */
+    .pdf-close-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: #FF6F61;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #fff;
+        z-index: 10001;
+    }
+
+    .pdf-close-btn:hover {
+        background-color: #FF7F6E;
+    }
+
+    /* Style links to match the rest of the content */
+    #resume a {
+        color: #1A1A77;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #resume a:hover {
+        text-decoration: underline;
+        color: #FF6F61;
+    }
+
+    @media (max-width: 768px) {
+        .pdf-content {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            padding: 10px;
+        }
+    }
+
+    /* Disable body scroll when modal is open */
+    body.modal-open {
+        overflow: hidden;
+    }
+
+>>>>>>> 5733b86 (initial commit from surface)
 /* Footer styling */
 footer {
     background-color: #1A1A77;

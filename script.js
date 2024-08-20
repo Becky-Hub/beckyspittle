@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll to the top of the homepage when the logo is clicked
     logoLink.addEventListener('click', (e) => {
         // Check if the current page is the homepage
-        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        if (window.location.pathname === "index.html" || window.location.pathname === '/index.html') {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }

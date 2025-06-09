@@ -3,19 +3,20 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #FFF1E6;
-    line-height: 1.75;
+    background-color: #F9FAFB;
+    line-height: 1.7;
+    color: #1F2937;
     overflow-x: hidden;
 }
 
 .page-wrapper {
-    padding: 2rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding:calc(64px + 8px + 2rem) 1rem 2rem;
+    max-width:1200px;
+    margin:0 auto;
 }
 
 header {
-    background-color: rgba(26, 26, 119, 0.95);
+    background-color: rgba(31, 41, 55, 1);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -27,7 +28,7 @@ header {
 
 header.scrolled {
     padding: 0.5rem 0;
-    background-color: rgba(26, 26, 119, 0.85);
+    background-color: rgba(31, 41, 55, 0.9);
 }
 
 .nav-container {
@@ -121,7 +122,7 @@ nav ul li a.active {
 }
 
 .mobile-nav a {
-    background-color: #1A1A77;
+    background-color: rgba(31, 41, 55, 1);
     color: #fff;
     padding: 0.5rem 1rem;
     margin: 0.3rem 0;
@@ -136,7 +137,7 @@ nav ul li a.active {
 }
 
 .mobile-nav a:hover {
-    background-color: #3F3FA2;
+    background-color: rgba(53, 62, 75, 1);
 }
 
 .mobile-nav a i {
@@ -188,23 +189,34 @@ nav ul li a.active {
 }
 
 section {
-    margin-top: 90px;
-    padding: 2rem 0;
+    margin-top:2rem;
 }
+
+.introduction {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    gap: .5rem;
+    flex-wrap: nowrap;         
+  }
+  
+  @media (max-width: 600px) {
+    .introduction { flex-direction: column; }  
+  }
+  
+  .headshot {
+    width: 25%;             
+    height: 25%;                           
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;          
+  }
 
 .introduction h1 {
-    font-size: 2.8rem;
-    color: #1A1A77;
-    margin-bottom: 1rem;
-    font-weight: 800;
-}
-
-.page-wrapper h2 {
-    font-size: 2.2rem;
-    color: #333;
-    margin-top: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
+    font-size:2.4rem;
+    font-weight:700;
+    color: #1F2937;
+    text-align:center;
 }
 
 #changing-text {
@@ -225,11 +237,11 @@ a[href="#alpacas"]:hover {
 /* Timeline container styling */
 .timeline-container {
     position: relative;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     margin-top: 2rem;
 }
 
-/* Timeline line styling */
+/* Timeline line styling
 .timeline-line {
     position: absolute;
     left: 0;
@@ -237,7 +249,7 @@ a[href="#alpacas"]:hover {
     bottom: 0;
     width: 4px;
     background-color: #1A1A77;
-}
+} */
 
 /* Timeline item styling */
 .timeline-item {
@@ -247,7 +259,7 @@ a[href="#alpacas"]:hover {
     position: relative;
 }
 
-/* Date styling with notches as lines */
+/* Date styling with notches as lines
 .timeline-item .date {
     flex-shrink: 0;
     width: 35px;
@@ -257,9 +269,9 @@ a[href="#alpacas"]:hover {
     padding-left: 15px;
     position: relative;
     padding-right: 25px;
-}
+} */
 
-.timeline-item .date2 {
+/* .timeline-item .date2 {
     flex-shrink: 0;
     width: 35px;
     font-size: 1rem;
@@ -269,9 +281,9 @@ a[href="#alpacas"]:hover {
     position: relative;
     padding-right: 25px;
     visibility: hidden;
-}
+} */
 
-.timeline-item .date::before {
+/* .timeline-item .date::before {
     content: "";
     position: absolute;
     left: -10px;
@@ -281,25 +293,25 @@ a[href="#alpacas"]:hover {
     height: 4px;
     background-color: #1A1A77;
     z-index: 1;
-}
+} */
 
-/* Present styling */
+/* Present styling
 .timeline-item .present {
     display: block;
     font-size: 1rem;
     color: #4A4A4A;
     text-align: left;
-}
+} */
 
 /* Tile styling */
 .timeline-item .tile {
     background-color: #f4f4f4;
-    border: 2px solid #1A1A77;
+    border: 2px solid rgba(31, 41, 55, 1);
     transition: transform 0.3s ease;
     text-align: left;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     flex-grow: 1;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     padding: 1.5rem;
     display: flex;
     align-items: center;
@@ -324,7 +336,7 @@ a[href="#alpacas"]:hover {
 /* Tile heading styling */
 .timeline-item .tile h3 {
     margin: 0;
-    color: #1A1A77;
+    color: #1F2937;
     font-size: 1.4rem;
     font-weight: 700;
 }
@@ -339,6 +351,7 @@ a[href="#alpacas"]:hover {
 .timeline-item .tile:hover {
     transform: scale(1.01);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 /* Media query for small screens */
@@ -351,18 +364,6 @@ a[href="#alpacas"]:hover {
     }
 
     /* Center the date above the tile */
-    .timeline-item .date {
-        width: auto;
-        padding-right: 0;
-        margin-bottom: 0.5rem;
-        text-align: center;
-        padding-left: 10px;
-    }
-
-    .timeline-item .date2 {
-        visibility: hidden;
-        display: none;
-    }
 
     .timeline-item .tile {
         margin-left: 0;
@@ -377,19 +378,10 @@ a[href="#alpacas"]:hover {
 
 /* Adjustments for larger screens */
 @media (min-width: 1024px) {
-    /* Increase padding-left for the date */
-    .timeline-item .date {
-        padding-left: 10px;
-    }
-
-    .timeline-item .date2 {
-        padding-left: 10px;
-        visibility: hidden;
-    }
 
     /* Adjust margin-left for the tile to balance */
     .timeline-item .tile {
-        margin-left: 45px;
+        padding-left: 10px;
     }
 }
 
@@ -427,10 +419,10 @@ a[href="#alpacas"]:hover {
     flex-shrink: 0;
 }
 
-.tile:hover {
+/* .timeline-item:hover {
     transform: scale(1.01);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
+} */
 
 /* Ensure links don't change color after being visited */
 .tile a:visited {
@@ -589,14 +581,15 @@ a[href="#alpacas"]:hover {
 
     /* Style links to match the rest of the content */
     #resume a {
-        color: #1A1A77;
-        text-decoration: none;
-        font-weight: bold;
+        color: rgba(31, 41, 55, 1);
+        text-decoration: underline;
+        /* font-weight: bold; */
     }
 
     #resume a:hover {
         text-decoration: underline;
         color: #FF6F61;
+        transition: color 0.2s ease;
     }
 
     @media (max-width: 768px) {
@@ -615,10 +608,10 @@ a[href="#alpacas"]:hover {
 
 /* Footer styling */
 footer {
-    background-color: #1A1A77;
+    background-color: rgba(31, 41, 55, 1);
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     margin: 0;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
@@ -632,25 +625,33 @@ footer {
     margin-top: 1.5rem;
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #1A1A77;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
+.contact-item{
+    text-decoration:none;     /* remove underline from the whole link       */
+    display:inline-flex;      /* icon + text line up nicely                 */
+    align-items:center;
+    color:#1F2937;            /* your existing text colour                  */
+    gap:.5rem;                /* replaces margin-right on the <i>           */
+  }
+  .link-text{
+    text-decoration:underline;
+  }  
 
 .contact-item i {
-    margin-right: 0.5rem;
+    /* margin-right: 0.5rem; */
+    text-decoration: none;
     font-size: 1.5rem;
     color: #FF6F61;
 }
 
+.contact-item:hover .link-text,
+.contact-item:focus .link-text{
+  color:#FF6F61;            /* your accent                                 */
+}
+
 .contact-item:hover {
+
     color: #FF6F61;
-    text-decoration: underline;
+    transition: color 0.2s ease;
 }
 
 /* Contact me button styling */
@@ -668,7 +669,7 @@ footer {
     opacity: 0.94;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 #contact-me-button:hover {

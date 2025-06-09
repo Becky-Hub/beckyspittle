@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         changingText.textContent = textArray[textIndex];
     }
 
-    setInterval(changeText, 2000);
+    setInterval(changeText, 2500);
 
     const offset = 70; // Adjust this value based on the height of your header
     

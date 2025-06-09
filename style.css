@@ -203,14 +203,18 @@ section {
   @media (max-width: 600px) {
     .introduction { flex-direction: column; }  
   }
-  
+
+
   .headshot {
     width: 25%;             
     height: 25%;                           
     object-fit: cover;
     border-radius: 50%;
-    flex-shrink: 0;          
+    flex-shrink: 0;    
+    min-width:150px;   
+    min-height:150px;      
   }
+
 
 .introduction h1 {
     font-size:2.4rem;

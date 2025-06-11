@@ -9,6 +9,13 @@ body {
     overflow-x: hidden;
 }
 
+@media (min-width: 500px) and (max-width: 770px) {
+    .break-mid::before {
+            content: '\A';      /* literal newline character */
+            white-space: pre;   /* make the \A actually break the line */
+          }
+        }
+
 .page-wrapper {
     padding:calc(64px + 8px + 2rem) 1rem 2rem;
     max-width:1200px;
@@ -69,6 +76,7 @@ nav ul li a:hover,
 nav ul li a.active {
     text-decoration: underline;
     color: #FF6F61;
+    transition: color 0.2s ease;
 }
 
 .hamburger {
@@ -89,6 +97,7 @@ nav ul li a.active {
 
 .hamburger:hover {
     background-color: #FF7F6E;
+    transition: color 0.2s ease;
 }
 
 .hamburger i {
@@ -138,6 +147,7 @@ nav ul li a.active {
 
 .mobile-nav a:hover {
     background-color: rgba(53, 62, 75, 1);
+    transition: color 0.2s ease;
 }
 
 .mobile-nav a i {
@@ -227,15 +237,42 @@ section {
     color: #FF6F61;
 }
 
-/* Make the "cute pictures of alpacas" link coral */
+/* #changing-text.force-break{
+    display:block;         
+    width:100%;
+    margin-top:.25em;      
+    text-align:center;     
+} */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeIn 2s ease;   /* 0.4 s fade */
+  }
+
 a[href="#alpacas"] {
-    text-decoration: none;
-    color: #333;
+    color: #1F2937;
+    text-decoration: underline;
 }
 
 a[href="#alpacas"]:hover {
     color: #FF7F6E;
     text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.text-link{
+    color: #1F2937;
+    text-decoration: underline;
+}
+
+.text-link:hover {
+    color: #FF7F6E;
+    text-decoration: underline;
+    transition: color 0.2s ease;
 }
 
 /* Timeline container styling */
@@ -356,6 +393,7 @@ a[href="#alpacas"]:hover {
     transform: scale(1.01);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 /* Media query for small screens */
@@ -523,7 +561,9 @@ a[href="#alpacas"]:hover {
 
 .close-btn:hover {
     background-color: #FF7F6E;
+    transition: color 0.2s ease;
 }
+
 
        /* Modal overlay styling */
        .pdf-overlay {
@@ -581,6 +621,7 @@ a[href="#alpacas"]:hover {
 
     .pdf-close-btn:hover {
         background-color: #FF7F6E;
+        transition: color 0.2s ease;
     }
 
     /* Style links to match the rest of the content */
@@ -604,6 +645,7 @@ a[href="#alpacas"]:hover {
             padding: 10px;
         }
     }
+
 
     /* Disable body scroll when modal is open */
     body.modal-open {
@@ -649,11 +691,11 @@ footer {
 
 .contact-item:hover .link-text,
 .contact-item:focus .link-text{
-  color:#FF6F61;            /* your accent                                 */
+  color:#FF6F61;
+  transition: color 0.2s ease;
 }
 
 .contact-item:hover {
-
     color: #FF6F61;
     transition: color 0.2s ease;
 }
@@ -679,7 +721,9 @@ footer {
 #contact-me-button:hover {
     background-color: #FF7F6E;
     transform: scale(1.05);
+    transition: color 0.2s ease;
 }
+
 
 /* Global scroll behavior */
 body, html {

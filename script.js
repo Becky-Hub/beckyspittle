@@ -21,18 +21,22 @@ document.addEventListener('DOMContentLoaded', function() {
         " interests"
     ];
     let textIndex = 0;
+    
 
-    // Change text function for introduction
+    // Change text 
     function changeText() {
         textIndex = (textIndex + 1) % textArray.length;
         changingText.textContent = textArray[textIndex];
-    }
+        changingText.classList.remove('fade-in');   // animation
+        void changingText.offsetWidth;              
+        changingText.classList.add('fade-in');      
+      }
 
     setInterval(changeText, 2500);
 
-    const offset = 70; // Adjust this value based on the height of your header
+    const offset = 70; 
     
-    // Smooth scroll for navigation links
+    // Smooth scroll 
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
@@ -55,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Scroll to the top of the homepage when the logo is clicked
+    // Scroll to the top of the homepage when name is clicked
     logoLink.addEventListener('click', (e) => {
         // Check if the current page is the homepage
         if (window.location.pathname === "index.html" || window.location.pathname === '/index.html') {
@@ -123,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Initial check for hamburger menu visibility
+    // Initial check for hamburger menu
     if (window.innerWidth > 768) {
         hamburgerMenu.style.display = 'none';
     } else {

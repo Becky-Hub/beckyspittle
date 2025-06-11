@@ -19,8 +19,8 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#resume">Resume</a></li>
+                    <li><a href="#projects">Research</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -31,11 +31,12 @@
         <section id="introduction">
             <div class="introduction">
               <h1>
-                Hi! Here you can learn more about my
-                <span id="changing-text">experience</span>.
+                Hi! Here you can learn more about my<span class="break-mid">
+                    <span id="changing-text" class="fade-in">experience</span>.
+                  </span>
               </h1>
           
-              <img src="images/becky_img.png" alt="Becky Spittle cartoon head-shot" class="headshot" loading="lazy">
+              <img src="images/becky_img.png" alt="Becky Spittle cartoon head-shot" class="headshot">
             </div>
           </section>
     
@@ -48,19 +49,47 @@
             <!-- With expertise in mixed-methods UX research and interaction design, I thrive on applying logical thinking and methodical approaches to gather in-depth user insights, develop new concepts and solve real-world problems. -->
 
             <!-- <p>I have a background in Music Technology, where after using music software and tinkering with hardware and electronics, I began to develop my passion for interactive systems. Following my BSc, I completed an MSc in User Experience Design, where I gained a strong interest for user-centred research and advanced and immersive technologies. This led me to specialise in interaction design, which has been the focus of my PhD.</p> -->
+             
+            <p><b>UX Researcher</b> | <b>HCI PhD Candidate</b> | <b>Microsoft Research Fellow</b></p>
                 
-            <p>I’m a UX Researcher completing a PhD in Human–Computer Interaction. I specialise in how people interact with spatial interfaces using a range of input techniques. Through mixed-methods research, I uncover deep user insights and translate them into practical, user-centred solutions.
+            <p>I work at the intersection of research and interaction design, exploring how people perceive, navigate, and adapt to spatial interfaces. Through mixed-methods approaches, I bridge exploratory insights with product development to provide innovative user-centred solutions.</p>
             
-            <p> In 2022, I was awarded the prestigious Microsoft Research PhD Fellowship and later completed an internship with the Collaborative Intelligence team at MSR Cambridge. Research contributions produced have been shared with wider groups at MSR, directly shaping product strategy.</p>
+            <p>I was awarded the prestigious <a href="https://www.microsoft.com/en-us/research/academic-program/phd-fellowship/" class="text-link">Microsoft Research PhD Fellowship</a> and have completed an internship with the Collaborative Intelligence team at MSR Cambridge. Research contributions produced have been shared with wider groups at MSR, directly <a href="https://www.microsoft.com/en-us/microsoft-teams/microsoft-mesh" class="text-link">shaping product strategy</a>.</p>
 
-            <p>Driven by the potential of Natural User Interfaces, XR, and AI/ML to reshape how we interact with digital content, I’m interested in designing innovatove research and exploring how we can leverage these technologies to deliver more practical, intuitive, and personalised experiences.</p>
-
-            <p>I’m always up for meeting new people and learning something new! Outside of work I enjoy listening to music, playing video games and the acoustic guitar, reading, travelling and looking at <em><a href="#alpacas">cute pictures of alpacas</a></em>.
+            <p>I’m always up for meeting new people and learning something new! Outside of work I enjoy listening to music, playing video games and the acoustic guitar, reading, travelling and looking at <a href="#alpacas">cute pictures of alpacas</a>.
             </p>
         </section>
 
+        <section id="resume">
+            <h2>Resume</h2>
+            <p>
+                Here's my <a href="#" id="view-resume-btn">Resume</a>, updated June 2025. Please get in touch if you would like to discuss any of my experience or request a full .pdf CV.
+            </p>
+
+            <div class="contact-info">
+                <a href="mailto:becky.spittle@outlook.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span class="link-text">becky.spittle@outlook.com</span>
+                  </a>
+                  
+                  <a href="https://www.linkedin.com/in/becky-spittle/" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="link-text">LinkedIn</span>
+                  </a>
+            </div>
+            
+            <!-- Modal Overlay -->
+            <div id="pdf-modal" class="pdf-overlay">
+                <div class="pdf-content">
+                    <iframe id="pdf-viewer" src="CV_Becky_Spittle.pdf" frameborder="0"></iframe>
+                    <span class="pdf-close-btn">&times;</span>
+                </div>
+            </div>
+        </section>
+
+
         <section id="projects">
-            <h2>Projects</h2>
+            <h2>Research</h2>
             <div class="timeline-container">
                 <div class="timeline-line"></div>
 
@@ -165,23 +194,6 @@
             </div> -->
         </section>
 
-        <section id="resume">
-            <h2>Resume</h2>
-            <p>
-                <a href="CV_Becky_Spittle.pdf" download>Download Resume</a> or 
-                <a href="#" id="view-resume-btn">View Full-Screen</a>
-            </p>
-            
-            <!-- Modal Overlay -->
-            <div id="pdf-modal" class="pdf-overlay">
-                <div class="pdf-content">
-                    <iframe id="pdf-viewer" src="CV_Becky_Spittle.pdf" frameborder="0"></iframe>
-                    <span class="pdf-close-btn">&times;</span>
-                </div>
-            </div>
-        </section>
-
-
         <section id="contact">
             <h2>Contact</h2>
             <p>It would be great to hear from you! Reach out via email or connect with me on LinkedIn.</p>
@@ -195,6 +207,7 @@
                     <i class="fab fa-linkedin"></i>
                     <span class="link-text">LinkedIn</span>
                   </a>
+            <p>I'm always on the lookout for opportunities to innovate, collaborate, and build on professional experience.</p>
             </div>
         </section>
 
@@ -204,8 +217,8 @@
 
         <div class="mobile-nav" id="mobile-nav">
             <a href="#about"><i class="fas fa-user"></i> About</a>
-            <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
             <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
+            <a href="#projects"><i class="fas fa-briefcase"></i> Research</a>
             <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
         </div>
 
@@ -213,7 +226,7 @@
     </div>
 
     <footer class="footer">
-        <p>&copy; 2024 Becky Spittle. All rights reserved.</p>
+        <p>&copy; 2025 Becky Spittle.</p>
     </footer>
 
     <script src="script.js"></script>

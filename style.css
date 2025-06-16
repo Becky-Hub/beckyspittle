@@ -667,7 +667,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    /* gap: 1rem; */
     margin-top: 1.5rem;
 }
 
@@ -681,6 +681,29 @@ footer {
   .link-text{
     text-decoration:underline;
   }  
+
+  
+ /* turn the underline back OFF for the whole contact link */
+#resume .contact-item {
+    text-decoration: none;
+  }
+
+  #resume .contact-item:hover {
+    text-decoration: none;
+  }
+  
+  /* put the underline ON the span that holds the text */
+#resume .contact-item .link-text {
+    text-decoration: underline;
+  }
+
+#resume .contact-item i {
+    /* margin-right: 0.5rem; */
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #FF6F61;
+}
+   
 
 .contact-item i {
     /* margin-right: 0.5rem; */
